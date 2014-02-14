@@ -47,10 +47,19 @@ void draw()
     drawButton(i); //draw button
 
   // you shouldn't need to edit anything above this line! You can edit below this line as you see fit
-
-  fill(255, 0, 0); // set fill color to red
-  ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
-
+  Rectangle bounds = getButtonLocation((Integer)trials.get(trialNum));
+  
+  if ((userX > bounds.x && userX < bounds.x + bounds.width) && (userY > bounds.y && userY < bounds.y + bounds.height)) // test to see if the user is within bounds
+  {
+    fill(0, 255, 0); // set fill color to red
+    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
+  } 
+  else
+  {
+    fill(255, 0, 0); // set fill color to red
+    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
+  }
+  
 }
 
 void mousePressed() // test to see if hit was in target!
