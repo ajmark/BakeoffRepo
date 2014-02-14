@@ -58,7 +58,7 @@ void draw()
   else
   {
     fill(255, 0, 0); // set fill color to red
-    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
+    ellipse(userX, userY, 40, 40); //draw user cursor as a circle with a diameter of 20
   }
   
 }
