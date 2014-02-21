@@ -34,8 +34,8 @@ void draw()
     text("Hits: " + hits, width / 2, height / 2 + 20);
     text("Misses: " + misses, width / 2, height / 2 + 40);
     text("Accuracy: " + (float)hits*100f/(float)(hits+misses) +"%", width / 2, height / 2 + 60);
-    text("Total time taken: " + finishTime / 1000f + " sec", width / 2, height / 2 + 80);
-    text("Average time for each button: " + (finishTime / 1000f)/(float)(hits+misses) + " sec", width / 2, height / 2 + 100);
+    text("Total time taken: " + (finishTime-startTime) / 1000f + " sec", width / 2, height / 2 + 80);
+    text("Average time for each button: " + ((finishTime-startTime) / 1000f)/(float)(hits+misses) + " sec", width / 2, height / 2 + 100);
 
     return; //return, nothing else to do now test is over
   }
@@ -51,20 +51,20 @@ void draw()
   
   if ((userX > bounds.x && userX < bounds.x + bounds.width) && (userY > bounds.y && userY < bounds.y + bounds.height)) // test to see if the user is within bounds
   {
-    mousePressed();
-    fill(0, 60, 200); // set fill color to red
-    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
+    fill(0, 60, 200); // set fill color to blue
+    ellipse(userX, userY, 30, 30); //draw user cursor as a circle with a diameter of 20 
   } 
   else
   {
     fill(255, 0, 0); // set fill color to red
-    ellipse(userX, userY, 40, 40); //draw user cursor as a circle with a diameter of 20
+    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
   }
   
 }
 
 void mousePressed() // test to see if hit was in target!
 {
+    
   if (trialNum >= trials.size())
     return;
 
@@ -78,8 +78,8 @@ void mousePressed() // test to see if hit was in target!
     System.out.println("Hits: " + hits);
     System.out.println("Misses: " + misses);
     System.out.println("Accuracy: " + (float)hits*100f/(float)(hits+misses) +"%");
-    System.out.println("Total time taken: " + finishTime / 1000f + " sec");
-    System.out.println("Average time for each button: " + (finishTime / 1000f)/(float)(hits+misses) + " sec");
+    System.out.println("Total time taken: " + (finishTime-startTime) / 1000f + " sec");
+    System.out.println("Average time for each button: " + ((finishTime-startTime) / 1000f)/(float)(hits+misses) + " sec");
   }
 
   Rectangle bounds = getButtonLocation((Integer)trials.get(trialNum));
