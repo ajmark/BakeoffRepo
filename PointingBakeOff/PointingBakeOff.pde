@@ -51,20 +51,20 @@ void draw()
   
   if ((userX > bounds.x && userX < bounds.x + bounds.width) && (userY > bounds.y && userY < bounds.y + bounds.height)) // test to see if the user is within bounds
   {
-    mousePressed();
-    fill(0, 60, 200); // set fill color to red
-    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
+    fill(0, 60, 200); // set fill color to blue
+    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20 
   } 
   else
   {
     fill(255, 0, 0); // set fill color to red
-    ellipse(userX, userY, 40, 40); //draw user cursor as a circle with a diameter of 20
+    ellipse(userX, userY, 20, 20); //draw user cursor as a circle with a diameter of 20
   }
   
 }
 
 void mousePressed() // test to see if hit was in target!
 {
+    
   if (trialNum >= trials.size())
     return;
 
