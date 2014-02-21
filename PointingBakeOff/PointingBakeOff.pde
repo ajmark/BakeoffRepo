@@ -167,6 +167,7 @@ void drawButton(int i)
       stroke(0, 0, 255);
       strokeWeight(4);
       rect(bounds.x, bounds.y, bounds.width, bounds.height);
+      noStroke();
     }
   else
     noStroke();
